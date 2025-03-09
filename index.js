@@ -138,3 +138,62 @@ if (burgerIcon && burgerMenu) {
     }
   });
 }
+
+
+// Ищем контейнер с классом .mySwiper
+const swiper = new Swiper('.mySwiper', {
+  slidesPerView: 2,
+  spaceBetween: 16,
+  grabCursor: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    600: {slidesPerView: 3, spaceBetween: 24},
+    1024: { slidesPerView: 4 },
+  },
+});
+
+
+const popup = document.getElementById('popup');
+    const overlay = popup.querySelector('.popup__overlay');
+    const closeBtn = popup.querySelector('.popup__close');
+
+    // Допустим, есть кнопка Learn More
+    const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+    learnMoreButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        popup.classList.add('show');
+      });
+    });
+
+    // Закрытие по нажатию на крестик
+    closeBtn.addEventListener('click', () => {
+      popup.classList.remove('show');
+    });
+
+    // Закрытие по клику на оверлей (в сторону от попап-контента)
+    overlay.addEventListener('click', () => {
+      popup.classList.remove('show');
+    });
+
+
+
+    const termsCheckbox = document.getElementById('terms');
+const submitButton = document.querySelector('.main-button_submit');
+
+termsCheckbox.addEventListener('change', () => {
+  if (termsCheckbox.checked) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
+});

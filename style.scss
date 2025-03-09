@@ -1,7 +1,10 @@
+@use './product';
+
 $green: #0D363A;
 $grey: #cfd7d8;
 
 .wrapper {
+
     &>div,
     &>ul {
         padding: 0 48px;
@@ -331,7 +334,7 @@ $grey: #cfd7d8;
             // }
         }
 
-        &>a {
+        &-button {
             font-weight: 500;
             font-size: 16px;
             line-height: 22.4px;
@@ -431,15 +434,15 @@ $grey: #cfd7d8;
     border-radius: 4px;
     height: 100vh;
 
-    & > div {
+    &>div {
         padding-top: 88px;
     }
 
-    & > div > ul > li {
+    &>div>ul>li {
         @extend .accordion;
         display: block;
 
-        & > a {
+        &>a {
             @extend .accordion__header;
             border: none;
             padding-left: unset;
@@ -450,18 +453,18 @@ $grey: #cfd7d8;
                 opacity: 1;
             }
 
-            & > div > svg > path {
+            &>div>svg>path {
                 fill: #fff;
             }
         }
 
-        & > div:last-child {
+        &>div:last-child {
             @extend .accordion__content;
             color: #fff;
             padding-top: 0;
 
             a {
-                &:hover   {
+                &:hover {
                     color: #fff !important;
                 }
             }
@@ -477,7 +480,7 @@ $grey: #cfd7d8;
             fill: #BFDDBC !important;
         }
 
-        & > div:last-child {
+        &>div:last-child {
             padding-top: 15px;
         }
     }
@@ -487,7 +490,7 @@ $grey: #cfd7d8;
     right: 0px;
     opacity: 1;
     visibility: visible;
-  }
+}
 
 .PT-text {
     font-family: "PT Sans";
@@ -535,6 +538,12 @@ $grey: #cfd7d8;
             transform: rotate(-45deg);
         }
     }
+}
+
+.main-button_green {
+    @extend .main-button;
+    background: #004A42;
+    color: #fff;
 }
 
 .main-button_green-centre {
@@ -860,6 +869,7 @@ $grey: #cfd7d8;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        column-gap: 5px;
 
         @media (width < 768px) {
             flex-wrap: wrap;
@@ -1276,3 +1286,5 @@ $grey: #cfd7d8;
     opacity: 1;
     transform: translateY(0);
 }
+
+

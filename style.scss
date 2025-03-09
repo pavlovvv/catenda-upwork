@@ -1,4 +1,5 @@
 @use './product';
+@use './about';
 
 $green: #0D363A;
 $grey: #cfd7d8;
@@ -1136,11 +1137,83 @@ $grey: #cfd7d8;
         }
     }
 
-    a {
+    &__button {
         @extend .main-button;
 
         @media (width < 1024px) {
             margin: 0 auto;
+        }
+    }
+
+    form {
+        input {
+            height: 58px;
+            background: transparent;
+            font-size: inherit;
+            border: 1px solid #FFFFFF4D;
+            border-radius: 4px;
+            width: 100%;
+            padding-left: 16px; 
+            color: #fff;
+            transition: all .3s ease;
+            padding-right: 150px;
+
+            @media (width < 768px) {
+                height: 50px;
+            }
+
+
+            &::placeholder {
+                color: #fff;
+                opacity: 0.8;
+            }
+
+            &:focus {
+                border: 1px solid #fff;
+            }
+
+            @media (width < 1024px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__input {
+        max-width: 400px;
+        position: relative;
+
+        @media (width < 1024px) {
+            max-width: unset;
+        }
+
+        button {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 140px;
+
+            @media (width < 768px) {
+                position: relative;
+                margin-top: 24px;
+            }
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #fff;
+            opacity: 0.8;
+            padding-top: 16px;
+
+            @media (width < 768px) {
+                display: none;
+            }
+
+            a {
+                font-weight: bold;
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -1287,4 +1360,42 @@ $grey: #cfd7d8;
     transform: translateY(0);
 }
 
+.wrapper_header-white {
+    @extend .wrapper_header;
+    background: rgba(255, 255, 255, 0.9) !important;
+
+    a,
+    div {
+        &>span {
+            color: #02171A !important;
+        }
+
+        &>button {
+            img {
+                filter: invert(100%);
+            }
+        }
+    }
+
+    .header__right-button_green {
+        color: #fff;
+        background: $green;
+    }
+
+    .burger__menu {
+        background: #fff;
+    }
+
+    .burger__menu .open span {
+        color: $green !important;
+    }
+
+    .burger__menu>div>ul>li>div:last-child a {
+        color: #000;
+
+        &:hover {
+            color: #000 !important;
+        }
+    }
+}
 

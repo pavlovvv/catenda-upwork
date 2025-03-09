@@ -1,0 +1,214 @@
+.about-hero {
+    padding: 160px 16px 80px 16px;
+
+    @media (width < 1024px) {
+        padding-top: 128px;
+        padding-bottom: 64px;
+    }
+
+    .PT-text {
+        padding-bottom: 32px;
+
+        @media (width < 768px) {
+            padding-bottom: 24px;
+            text-align: center;
+        }
+    }
+
+    &__top {
+        display: flex;
+        column-gap: 24px;
+        padding-bottom: 64px;
+        color: #fff;
+
+        @media (width < 768px) {
+            padding-bottom: 40px;
+        }
+
+        @media (width < 768px) {
+            flex-direction: column;
+            row-gap: 24px;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 72px;
+            line-height: 100%;
+            letter-spacing: -0.4px;
+            max-width: 755px;
+            width: 100%;
+
+            @media (width < 1024px) {
+                font-size: 46px;
+                line-height: 110.00000000000001%;
+            }
+
+            @media (width < 768px) {
+                max-width: unset;
+                text-align: center;
+            }
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            max-width: 488px;
+            width: 100%;
+
+            @media (width < 1024px) {
+                font-size: 16px;
+                line-height: 150%;
+            }
+
+            @media (width < 768px) {
+                max-width: unset;
+                text-align: center;
+            }
+        }
+    }
+
+    &>img {
+        border-radius: 14px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 64px;
+        min-height: 385px;
+        object-fit: cover;
+
+        @media (width < 768px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__metrics {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        @media (width < 768px) {
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        &>div {
+            max-width: 421px;
+            width: 100%;
+
+            @media (width < 1024px) {
+                max-width: unset;
+            }
+
+            &>div {
+                background: rgba(191, 221, 188, 0.1);
+                padding: 24px;
+                width: 100%;
+                height: 100%;
+                border-radius: 14px;
+
+                @media (width < 768px) {
+                    padding: 16px;
+                }
+
+                h3 {
+                    font-weight: 500;
+                    font-size: 90px;
+                    line-height: 90px;
+                    letter-spacing: -0.4px;
+                    color: #fff;
+
+                    @media (width < 1024px) {
+                        font-size: 64px;
+                        line-height: 100%;
+                    }
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding-top: 28px;
+                    color: #fff;
+
+                    @media (width < 1024px) {
+                        padding-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.location {
+    padding: 64px 16px;
+
+
+    &>p {
+        text-align: center;
+        padding-bottom: 24px;
+
+        @media (width < 1024px) {
+            padding-bottom: 16px;
+        }
+    }
+
+    h2 {
+        max-width: 638px;
+        padding-bottom: 64px;
+        color: #02171A;
+
+        @media (width < 1024px) {
+            padding-bottom: 40px;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        @media (width < 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (width < 600px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &>div {
+            background: #EBECEB;
+            border-radius: 14px;
+            max-width: 421px;
+            width: 100%;
+            padding: 24px;
+
+            @media (width < 1024px) {
+                max-width: unset;
+            }
+
+            @media (width < 768px) {
+                padding: 16px;
+            }
+
+            &>p:first-child {
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 120%;
+                letter-spacing: -0.4px;
+                padding-bottom: 24px;
+
+                @media (width < 768px) {
+                    font-size: 26px;
+                    line-height: 120%;
+                    padding-bottom: 16px;
+                }
+            }
+
+            &>p:last-child {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+            }
+        }
+    }
+}

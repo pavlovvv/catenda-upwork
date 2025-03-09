@@ -1,41 +1,5 @@
-.wrapper_header-white {
-    @extend .wrapper_header;
-    background: rgba(255, 255, 255, 0.9) !important;
-
-    a,
-    div {
-        &>span {
-            color: #02171A !important;
-        }
-
-        &>button {
-            img {
-                filter: invert(100%);
-            }
-        }
-    }
-
-    .header__right-button_green {
-        color: #fff;
-        background: $green;
-    }
-
-    .burger__menu {
-        background: #fff;
-    }
-
-    .burger__menu .open span {
-        color: $green !important;
-    }
-
-    .burger__menu>div>ul>li>div:last-child a {
-        color: #000;
-
-        &:hover {
-            color: #000 !important;
-        }
-    }
-}
+$green: #0D363A;
+$grey: #cfd7d8;
 
 .hero_product {
     padding: 160px 16px 80px 16px;
@@ -53,7 +17,33 @@
         }
 
         a {
-            @extend .main-button_green;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            height: 50px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: fit-content;
+            transition: background .3s ease;
+            background: #004A42;
+            color: #fff;
+        
+            img {
+                transition: transform .3s ease;
+            }
+        
+            &:hover {
+                background: #BFDDBC;
+        
+                img {
+                    transform: rotate(-45deg);
+                }
+            }
         }
     }
 
@@ -92,11 +82,11 @@
     }
 
     h4 {
-        @extend .PT-text_green;
+        color: $green !important;
     }
 
     h1 {
-        color: #02171A;
+        color: #02171A !important;
 
         @media (width < 1240px) and (width >=1024px) {
             max-width: 300px;
@@ -124,7 +114,7 @@
     h2 {
         max-width: 564px;
         padding-bottom: 64px;
-        color: #fff;
+        color: #fff !important;
 
         @media (width < 1024px) {
             padding-bottom: 40px;
@@ -286,7 +276,7 @@
     justify-content: center;
     background-color: #f1f1f1;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     max-width: 300px;
     width: 100%;
     height: 104px;
@@ -300,7 +290,7 @@
 
 .card img {
     height: auto;
-    transition: filter 0.3s ease;
+    transition: all 0.3s ease;
 
     @media (width < 768px) {
         max-width: 115px;
@@ -584,6 +574,10 @@
 
         &:focus {
             border: 1px solid #fff;
+        }
+
+        @media (width < 1240px) {
+            width: 350px;
         }
 
         @media (width < 1024px) {

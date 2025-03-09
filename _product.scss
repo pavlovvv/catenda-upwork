@@ -12,6 +12,10 @@ $grey: #cfd7d8;
     .hero__left {
         padding-top: 78px;
 
+        @media (width < 1024px) {
+            padding-top: unset;
+        }
+
         &-description {
             color: #344446;
         }
@@ -32,14 +36,14 @@ $grey: #cfd7d8;
             transition: background .3s ease;
             background: #004A42;
             color: #fff;
-        
+
             img {
                 transition: transform .3s ease;
             }
-        
+
             &:hover {
                 background: #BFDDBC;
-        
+
                 img {
                     transform: rotate(-45deg);
                 }
@@ -51,33 +55,30 @@ $grey: #cfd7d8;
         background: #EBECEB;
         border-radius: 14px;
         padding: 60px 74px;
-        max-height: 520px;
+        max-height: 520px !important;
 
         @media (width < 1024px) {
-            max-height: unset;
-        }
-
-        @media (width < 768px) {
-            padding: 16px 17px;
+            max-height: unset !important;
+            padding: 16px 17px !important;
         }
 
         &>div:nth-child(2) {
-            top: 16%;
-            left: 25px;
+            top: 16% !important;
+            left: 25px !important;
         }
 
         &>div:nth-child(3) {
-            top: 23%;
-            left: 25px;
+            top: 23% !important;
+            left: 25px !important;
         }
 
         &>div:nth-child(4) {
-            top: 38%;
-            left: 25px;
+            top: 38% !important;
+            left: 25px !important;
         }
 
         &>div>img {
-            width: 18%;
+            width: 18% !important;
         }
     }
 
@@ -186,6 +187,7 @@ $grey: #cfd7d8;
             color: $grey;
             padding-bottom: 24px;
             max-width: 411px;
+
             @media (width < 1024px) {
                 padding-bottom: 16px;
             }
@@ -263,6 +265,7 @@ $grey: #cfd7d8;
             padding-bottom: 40px;
         }
     }
+
 }
 
 .mySwiper {
@@ -270,9 +273,17 @@ $grey: #cfd7d8;
     padding-bottom: 64px !important;
 }
 
+.swiper_partner {
+    .card {
+        height: 137px;
+        row-gap: 25px;
+    }
+}
+
 .card {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     background-color: #f1f1f1;
     text-decoration: none;
@@ -286,24 +297,43 @@ $grey: #cfd7d8;
     @media (width < 768px) {
         height: 80px;
     }
-}
 
-.card img {
-    height: auto;
-    transition: all 0.3s ease;
+    img {
+        height: auto;
+        transition: all 0.3s ease;
 
-    @media (width < 768px) {
-        max-width: 115px;
+        @media (width < 768px) {
+            max-width: 115px;
+        }
+    }
+
+    &:hover {
+        background-color: #000;
+
+        p {
+            color: #fff;
+        }
+
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    p {
+        font-family: "PT Sans";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0D363A;
+
+        @media (width < 1024px) {
+            font-size: 10px;
+        }
     }
 }
 
-.card:hover {
-    background-color: #000;
-}
-
-.card:hover img {
-    filter: brightness(0) invert(1);
-}
 
 .swiper-button-prev {
     background: #004A42;
@@ -586,7 +616,7 @@ $grey: #cfd7d8;
     }
 
     &>div:last-of-type {
-        margin-bottom: 36px;
+        margin-bottom: 40px;
     }
 
     button {
@@ -640,6 +670,6 @@ $grey: #cfd7d8;
             background: #fff;
         }
 
-        border-color: #ffffff; 
+        border-color: #ffffff;
     }
 }

@@ -10,7 +10,6 @@ accordions.forEach((accordion, index) => {
     ".accordion__content, .burger__menu > div > ul > li > div"
   );
 
-  // Открываем первый аккордеон по умолчанию
   if (index === 0) {
     accordion.classList.add("open");
     content.style.maxHeight = content.scrollHeight + 24 + "px";
@@ -23,6 +22,26 @@ accordions.forEach((accordion, index) => {
       content.style.maxHeight = null;
     } else {
       content.style.maxHeight = content.scrollHeight + 24 + "px";
+    }
+  });
+});
+
+const mainImage = document.getElementById("main-dashboard-image");
+const mobileImages = document.querySelectorAll(".benefits__graph_mobile img");
+
+const accordionLinks = document.querySelectorAll(".accordion__content a");
+
+accordionLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const newSrc = link.dataset.img;
+
+    if (newSrc) {
+      mainImage.src = newSrc;
+      mobileImages.forEach((el) => {
+        el.src = newSrc;
+      });
     }
   });
 });
@@ -43,7 +62,18 @@ const observer = new IntersectionObserver(
 
 counters.forEach((counter) => observer.observe(counter));
 
+const fadeContainers = document.querySelectorAll(".fade-container");
 const fadeElements = document.querySelectorAll(".fade");
+
+fadeContainers.forEach((container) => {
+  const fadeElements = container.querySelectorAll(".fade");
+
+  fadeElements.forEach((el, index) => {
+    el.style.transitionDelay = `${0.1 * index}s`;
+
+    observer.observe(el);
+  });
+});
 
 const observerOptions = {
   threshold: 0.1,
@@ -121,7 +151,6 @@ if (burgerIcon && burgerMenu) {
   });
 }
 
-// Ищем контейнер с классом .mySwiper
 if (typeof Swiper !== "undefined") {
   const swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
@@ -147,12 +176,11 @@ if (typeof Swiper !== "undefined") {
   console.warn("Swiper не найден, пропускаем инициализацию.");
 }
 
-
 const popup = document.getElementById("popup");
 const overlay = popup.querySelector(".popup__overlay");
 const closeBtn = popup.querySelector(".popup__close");
 
-// Допустим, есть кнопка Learn More
+
 const learnMoreButtons = document.querySelectorAll(".learn-more-btn");
 learnMoreButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -160,12 +188,10 @@ learnMoreButtons.forEach((btn) => {
   });
 });
 
-// Закрытие по нажатию на крестик
 closeBtn.addEventListener("click", () => {
   popup.classList.remove("show");
 });
 
-// Закрытие по клику на оверлей (в сторону от попап-контента)
 overlay.addEventListener("click", () => {
   popup.classList.remove("show");
 });

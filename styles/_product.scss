@@ -33,19 +33,21 @@ $grey: #cfd7d8;
             cursor: pointer;
             border-radius: 4px;
             width: fit-content;
-            transition: background .3s ease;
+            transition: all .3s ease;
             background: #004A42;
             color: #fff;
 
             img {
-                transition: transform .3s ease;
+                transition: all .3s ease;
             }
 
             &:hover {
                 background: #BFDDBC;
+                color: #02171A;
 
                 img {
                     transform: rotate(-45deg);
+                    filter: invert(1);
                 }
             }
         }
@@ -483,6 +485,7 @@ $grey: #cfd7d8;
         @media (width < 1024px) {
             height: 150%;
         }
+
         .popup.show & {
             background-color: rgba(0, 0, 0, 0.6);
         }
@@ -598,7 +601,8 @@ $grey: #cfd7d8;
         padding-bottom: 16px;
     }
 
-    input, textarea {
+    input,
+    textarea {
         background: transparent;
         font-size: inherit;
         border: 1px solid #FFFFFF4D;

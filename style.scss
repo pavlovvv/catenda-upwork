@@ -1,8 +1,11 @@
-@use './product';
-@use './about';
-@use './partner';
-@use './case';
-@use './pricing';
+@use './styles/product';
+@use './styles/about';
+@use './styles/partner';
+@use './styles/case';
+@use './styles/pricing';
+@use './styles/blog';
+@use './styles/utils';
+@use './styles/error';
 
 $green: #0D363A;
 $grey: #cfd7d8;
@@ -528,10 +531,10 @@ $grey: #cfd7d8;
     background: #fff;
     border-radius: 4px;
     width: fit-content;
-    transition: background .3s ease;
+    transition: all .3s ease;
 
     img {
-        transition: transform .3s ease;
+        transition: all .3s ease;
     }
 
     &:hover {
@@ -547,6 +550,16 @@ $grey: #cfd7d8;
     @extend .main-button;
     background: #004A42;
     color: #fff;
+
+    &:hover {
+        background: #BFDDBC;
+        color: #02171A !important;
+
+        img {
+            transform: rotate(-45deg);
+            filter: brightness(0) invert(1);
+        }
+    }
 }
 
 .main-button_green-centre {
@@ -1363,48 +1376,6 @@ $grey: #cfd7d8;
             display: block;
         }
     }
-}
-
-@property --num {
-    syntax: "<integer>";
-    initial-value: 0;
-    inherits: false;
-}
-
-.counter {
-    counter-reset: num var(--num);
-
-    &::after {
-        content: counter(num) attr(data-suffix);
-    }
-}
-
-
-.counter.in-view {
-    animation: countUp 4s forwards ease-out;
-}
-
-@keyframes countUp {
-    0% {
-        --num: var(--initialValue, 0);
-    }
-
-    100% {
-        --num: var(--finalValue, 100);
-    }
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    /* subtle upward shift */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-/* Elements after IntersectionObserver triggers */
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .wrapper_header-white {

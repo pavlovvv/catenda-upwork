@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <div class="wrapper wrapper_header">
+    <div class="wrapper wrapper_header-white">
         <div>
             <header class="header">
-                <a href="./" class="header__logo">
-                    <img src="./img/logo.svg" alt="Catend logo">
+                <a href="/" class="header__logo">
+                    <img src="./img/logo-green.svg" alt="Catend logo">
                 </a>
 
                 <nav class="header__nav">
@@ -35,6 +35,7 @@
                             <div>
                                 <div>
                                     <a href="./product.html">Catenda Hub</a>
+                                    <a href="./">Catenda Site</a>
                                     <a href="./">Catenda Site</a>
                                     <a href="./">Catenda Duo</a>
                                     <a href="./">Catenda Boost</a>
@@ -86,7 +87,7 @@
 
                 <div class="header__right">
                     <span>Log In</span>
-                    <a class="header__right-button">Book a Demo</a>
+                    <a class="header__right-button header__right-button_green">Book a Demo</a>
                     <div class="header__languages">
                         <a>
                             <span>EN</span>
@@ -97,9 +98,9 @@
 
                         <div>
                             <div>
-                                <a href="./">UA</a>
-                                <a href="./">RU</a>
-                                <a href="./">SP</a>
+                                <a href="/">UA</a>
+                                <a href="/">RU</a>
+                                <a href="/">SP</a>
                             </div>
                         </div>
                     </div>
@@ -207,68 +208,65 @@
     </div>
 
     <main>
-        <div class="wrapper wrapper_green">
+        <div class="wrapper">
             <div>
-                <section class="demo-hero">
-                    <div class="hero__left">
-                        <h4>Tagline</h4>
-                        <h1>Schedule a Demo With Us Today!</h1>
-                        <p class="hero__left-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <section class="error-page">
+                    <p>Page Not Found</p>
+                    <p class="error-page__heading">404</p>
+                    <p>Oops! Something wrong happend!</p>
 
-                        <form>
-                            <div class="form__inner">
-                                <div class="form-group">
-                                    <input type="text" id="name" name="full_name" placeholder="Name" required>
-                                    <!-- <div class="error-message" id="nameError"></div> -->
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" name="email" placeholder="Work email" required>
-                                </div>
+                    <div class="error-page__buttons">
+                        <a href="./demo.html">
+                            <span>Book a Demo</span>
+                            <img src="./img/arrow-right.svg">
+                        </a>
 
-                                <div class="form-group">
-                                    <input type="email" id="email" name="email" placeholder="Job Title" required>
-                                </div>
-
-                                <div class="form-group checkbox-group">
-                                    <label class="checkbox-container">
-                                        <input type="checkbox" id="terms" required />
-                                        <span class="box"></span>
-                                        <span>I accept the <a href="#">Terms</a></span>
-                                    </label>
-                                </div>
-
-
-                                <button type="submit" class="main-button main-button_submit"
-                                    tabindex="0">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div style="padding: 0; margin: 0; max-height: unset;">
-                        <img src="./img/demo-hero.webp" alt="demo page">
+                        <a href="./">
+                            Back to Home
+                        </a>
                     </div>
                 </section>
+
+                <div>
+                    <section class="cta" style="text-align: left;">
+                        <div>
+                            <p class="PT-text">CTA</p>
+                            <h2 class="cta__heading">Start Your Journey with Catenda Hub Today</h2>
+                            <div class="cta__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Suspendisse varius enim in eros elementum tristique.</div>
+                            <form class="cta__form-1">
+                                <div class="cta__input">
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                    <button type="submit" class="main-button main-button_submit"
+                                        tabindex="0">Submit</button>
+                                    <p>Confirming that you agree with our <a href="/">Terms and Conditions.</a></p>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <img src="./img/cta-photo.png" alt="Catenda CTA">
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
+
     </main>
 
     <div class="wrapper">
         <div>
             <footer class="footer">
                 <div>
-                    <a href="./">
+                    <a href="/">
                         <img src="./img/catend-logo-footer.svg" alt="Catenda logo">
                     </a>
 
                     <div class="footer__media">
-                        <a href="./"><img src="./img/facebook.svg" alt="facebook-icon"></a>
-                        <a href="./"><img src="./img/inst.svg" alt="instagram-icon"></a>
-                        <a href="./"><img src="./img/twitter.svg" alt="twitter-icon"></a>
-                        <a href="./"><img src="./img/linkedin.svg" alt="linkedin-icon"></a>
-                        <a href="./"><img src="./img/youtube.svg" alt="youtube-icon"></a>
+                        <a href="/"><img src="./img/facebook.svg" alt="facebook-icon"></a>
+                        <a href="/"><img src="./img/inst.svg" alt="instagram-icon"></a>
+                        <a href="/"><img src="./img/twitter.svg" alt="twitter-icon"></a>
+                        <a href="/"><img src="./img/linkedin.svg" alt="linkedin-icon"></a>
+                        <a href="/"><img src="./img/youtube.svg" alt="youtube-icon"></a>
                     </div>
 
                     <div class="footer__bottom-text">
@@ -279,36 +277,36 @@
                 <div class="footer__links">
                     <div>
                         <p>products</p>
-                        <a href="./product.html">Catenda Hub</a>
-                        <a href="./">Catenda Site</a>
-                        <a href="./">Catenda Duo</a>
-                        <a href="./">Catenda Boost</a>
+                        <a href="/">Catenda Hub</a>
+                        <a href="/">Catenda Site</a>
+                        <a href="/">Catenda Duo</a>
+                        <a href="/">Catenda Boost</a>
                     </div>
 
                     <div>
                         <p>rESOURSES</p>
-                        <a href="./case.html">Case Studies</a>
-                        <a href="./">Help Center</a>
-                        <a href="./">BIM Glossary</a>
+                        <a href="/">Case Studies</a>
+                        <a href="/">Help Center</a>
+                        <a href="/">BIM Glossary</a>
                     </div>
 
                     <div>
                         <p>Copmany</p>
-                        <a href="./about.html">About Us</a>
-                        <a href="./">Partners</a>
-                        <a href="./">Pricing</a>
+                        <a href="/">About Us</a>
+                        <a href="/">Partners</a>
+                        <a href="/">Pricing</a>
                     </div>
 
                     <div>
                         <p>Legal</p>
-                        <a href="./">Privacy policy</a>
-                        <a href="./terms.html">Term of Use</a>
-                        <a href="./">Cookie Policy</a>
+                        <a href="/">Privacy policy</a>
+                        <a href="/">Term of Use</a>
+                        <a href="/">Cookie Policy</a>
                     </div>
                 </div>
 
                 <div class="footer__logo_mobile">
-                    <a href="./">
+                    <a href="/">
                         <img src="./img/catend-logo-footer.svg" alt="Catenda logo">
                     </a>
                 </div>

@@ -1,0 +1,41 @@
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.counter {
+    counter-reset: num var(--num);
+
+    &::after {
+        content: counter(num) attr(data-suffix);
+    }
+}
+
+
+.counter.in-view {
+    animation: countUp 4s forwards ease-out;
+}
+
+@keyframes countUp {
+    0% {
+        --num: var(--initialValue, 0);
+    }
+
+    100% {
+        --num: var(--finalValue, 100);
+    }
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    /* subtle upward shift */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Elements after IntersectionObserver triggers */
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}

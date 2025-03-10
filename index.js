@@ -10,8 +10,6 @@ accordions.forEach((accordion, index) => {
     ".accordion__content, .burger__menu > div > ul > li > div"
   );
 
-  console.log(content)
-
   if (index === 0) {
     accordion.classList.add("open");
     content.style.maxHeight = content.scrollHeight + 24 + "px";
@@ -179,17 +177,17 @@ if (typeof Swiper !== "undefined") {
     spaceBetween: 16,
     grabCursor: true,
     grid: {
-      rows: 2,               
-      fill: 'row',           
+      rows: 2,
+      fill: "row",
     },
 
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-    type: 'bullets',
-    renderBullet: function (index, className) {
-      return `<span class="${className}">${index + 1}</span>`;
-    },
+      type: "bullets",
+      renderBullet: function (index, className) {
+        return `<span class="${className}">${index + 1}</span>`;
+      },
     },
 
     navigation: {
@@ -198,18 +196,21 @@ if (typeof Swiper !== "undefined") {
     },
 
     breakpoints: {
-      600: { slidesPerView: 2, spaceBetween: 24,
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 24,
         grid: {
-          rows: 1,               
-          fill: 'row',           
+          rows: 1,
+          fill: "row",
         },
-       },
-      1024: { slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 3,
         grid: {
-          rows: 1,               
-          fill: 'row',           
+          rows: 1,
+          fill: "row",
         },
-       },
+      },
     },
   });
 } else {
@@ -217,32 +218,37 @@ if (typeof Swiper !== "undefined") {
 }
 
 const popup = document.getElementById("popup");
-const overlay = popup.querySelector(".popup__overlay");
-const closeBtn = popup.querySelector(".popup__close");
+if (popup) {
+  const overlay = popup.querySelector(".popup__overlay");
+  const closeBtn = popup.querySelector(".popup__close");
 
-
-const learnMoreButtons = document.querySelectorAll(".learn-more-btn, .contact-sales-btn");
-learnMoreButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    popup.classList.add("show");
+  const learnMoreButtons = document.querySelectorAll(
+    ".learn-more-btn, .contact-sales-btn"
+  );
+  learnMoreButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      popup.classList.add("show");
+    });
   });
-});
 
-closeBtn.addEventListener("click", () => {
-  popup.classList.remove("show");
-});
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });
 
-overlay.addEventListener("click", () => {
-  popup.classList.remove("show");
-});
+  overlay.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });
+}
 
 const termsCheckbox = document.getElementById("terms");
 const submitButton = document.querySelector(".main-button_submit");
 
-termsCheckbox.addEventListener("change", () => {
-  if (termsCheckbox.checked) {
-    submitButton.disabled = false;
-  } else {
-    submitButton.disabled = true;
-  }
-});
+if (termsCheckbox) {
+  termsCheckbox.addEventListener("change", () => {
+    if (termsCheckbox.checked) {
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
+    }
+  });
+}

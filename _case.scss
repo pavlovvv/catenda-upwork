@@ -1,0 +1,93 @@
+$green: #0D363A;
+
+.case-swiper {
+    .swiper-wrapper>div>div {
+        max-width: 421px;
+        width: 100%;
+        margin-bottom: 64px;
+
+        img {
+            border-radius: 14px;
+            width: 100%;
+            padding-bottom: 24px;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 120%;
+            padding-bottom: 24px;
+        }
+
+        div {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 100%;
+            display: flex;
+            column-gap: 8px;
+            color: $green;
+            transition: all .3s ease;
+            border-bottom: 1px solid transparent;
+            cursor: pointer;
+            width: fit-content;
+
+            svg {
+                path {
+                    stroke: $green;
+                    transition: stroke .3s ease;
+                }
+            }
+
+            &:hover {
+                color: #BFDDBC;
+                border-bottom: 1px solid #BFDDBC;
+
+                svg {
+                    path {
+                        stroke: #BFDDBC;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination-wrapper {
+        padding-top: 64px;
+        position: relative;
+
+        .swiper-pagination {
+            top: 28px;
+        }
+
+        @media (width < 768px) {
+            padding-top: 40px;
+
+            .swiper-pagination {
+                top: 4px;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet {
+        background: transparent !important;
+        margin-right: 15px !important;
+        font-size: 18px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        background: #fff;
+
+        path {
+            fill: #004A42;
+        }
+    }
+
+    .swiper-button-disabled {
+        background: transparent;
+
+        path {
+            fill: #969F9F;
+        }
+    }
+}

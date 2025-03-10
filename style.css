@@ -443,10 +443,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 150%;
+  height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
+}
+@media (width < 1024px) {
+  .popup__overlay {
+    height: 150%;
+  }
 }
 .popup.show .popup__overlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -547,6 +552,13 @@
 
 .form__inner input {
   height: 50px;
+}
+.form__inner textarea {
+  padding-top: 13px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+.form__inner input, .form__inner textarea {
   background: transparent;
   font-size: inherit;
   border: 1px solid rgba(255, 255, 255, 0.3019607843);
@@ -557,24 +569,24 @@
   color: #fff;
   transition: all 0.3s ease;
 }
-.form__inner input::-moz-placeholder {
+.form__inner input::-moz-placeholder, .form__inner textarea::-moz-placeholder {
   color: #fff;
   opacity: 0.8;
 }
-.form__inner input::placeholder {
+.form__inner input::placeholder, .form__inner textarea::placeholder {
   color: #fff;
   opacity: 0.8;
 }
-.form__inner input:focus {
+.form__inner input:focus, .form__inner textarea:focus {
   border: 1px solid #fff;
 }
 @media (width < 1240px) {
-  .form__inner input {
+  .form__inner input, .form__inner textarea {
     width: 350px;
   }
 }
 @media (width < 1024px) {
-  .form__inner input {
+  .form__inner input, .form__inner textarea {
     width: 100%;
   }
 }
@@ -1038,6 +1050,431 @@
   margin-bottom: 24px;
 }
 
+.case-swiper .swiper-wrapper > div > div {
+  max-width: 421px;
+  width: 100%;
+  margin-bottom: 64px;
+}
+.case-swiper .swiper-wrapper > div > div img {
+  border-radius: 14px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+.case-swiper .swiper-wrapper > div > div p {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 120%;
+  padding-bottom: 24px;
+}
+.case-swiper .swiper-wrapper > div > div div {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  color: #0D363A;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.case-swiper .swiper-wrapper > div > div div svg path {
+  stroke: #0D363A;
+  transition: stroke 0.3s ease;
+}
+.case-swiper .swiper-wrapper > div > div div:hover {
+  color: #BFDDBC;
+  border-bottom: 1px solid #BFDDBC;
+}
+.case-swiper .swiper-wrapper > div > div div:hover svg path {
+  stroke: #BFDDBC;
+}
+.case-swiper .pagination-wrapper {
+  padding-top: 64px;
+  position: relative;
+}
+.case-swiper .pagination-wrapper .swiper-pagination {
+  top: 28px;
+}
+@media (width < 768px) {
+  .case-swiper .pagination-wrapper {
+    padding-top: 40px;
+  }
+  .case-swiper .pagination-wrapper .swiper-pagination {
+    top: 4px;
+  }
+}
+.case-swiper .swiper-pagination-bullet {
+  background: transparent !important;
+  margin-right: 15px !important;
+  font-size: 18px;
+}
+.case-swiper .swiper-button-next,
+.case-swiper .swiper-button-prev {
+  background: #fff;
+}
+.case-swiper .swiper-button-next path,
+.case-swiper .swiper-button-prev path {
+  fill: #004A42;
+}
+.case-swiper .swiper-button-disabled {
+  background: transparent;
+}
+.case-swiper .swiper-button-disabled path {
+  fill: #969F9F;
+}
+
+.main-button, .main-button_green, .hero__left > a, .cta__button, .main-button_green, .pricing__buttons > div a {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  height: 50px;
+  color: #02171A;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+.main-button img, .main-button_green img, .hero__left > a img, .cta__button img, .pricing__buttons > div a img {
+  transition: transform 0.3s ease;
+}
+.main-button:hover, .main-button_green:hover, .hero__left > a:hover, .cta__button:hover, .pricing__buttons > div a:hover {
+  background: #BFDDBC;
+}
+.main-button:hover img, .main-button_green:hover img, .hero__left > a:hover img, .cta__button:hover img, .pricing__buttons > div a:hover img {
+  transform: rotate(-45deg);
+}
+
+.main-button_green, .pricing__buttons > div a {
+  background: #004A42;
+  color: #fff;
+}
+
+.main-button_green-centre, .pricing__buttons > div a {
+  background: #004A42;
+  color: #fff !important;
+  margin: 64px auto 0 auto;
+}
+.main-button_green-centre:hover, .pricing__buttons > div a:hover {
+  background: #004A42;
+}
+@media (width < 1024px) {
+  .main-button_green-centre, .pricing__buttons > div a {
+    margin-top: 40px;
+  }
+}
+
+.pricing-top {
+  padding: 160px 16px 124px 16px;
+}
+@media (width < 1024px) {
+  .pricing-top {
+    padding: 128px 8px;
+  }
+}
+.pricing-top .PT-text, .pricing-top .hero__left h4, .hero__left .pricing-top h4, .pricing-top .trusted-companies h4, .trusted-companies .pricing-top h4, .pricing-top .footer__links > div p, .footer__links > div .pricing-top p {
+  padding-bottom: 32px;
+  text-align: center;
+}
+@media (width < 1024px) {
+  .pricing-top .PT-text, .pricing-top .hero__left h4, .hero__left .pricing-top h4, .pricing-top .trusted-companies h4, .trusted-companies .pricing-top h4, .pricing-top .footer__links > div p, .footer__links > div .pricing-top p {
+    padding-bottom: 24px;
+  }
+}
+.pricing-top h1 {
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 24px;
+}
+@media (width < 1024px) {
+  .pricing-top h1 {
+    font-size: 46px;
+    line-height: 110%;
+  }
+}
+.pricing-top__description {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 412px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.pricing__buttons {
+  margin-top: -64px;
+  padding-bottom: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+@media (width < 600px) {
+  .pricing__buttons {
+    flex-direction: column;
+  }
+}
+.pricing__buttons > div {
+  background: #FFFFFF;
+  padding: 32px;
+  border-radius: 10px;
+  max-width: 421px;
+  width: 100%;
+}
+@media (width < 768px) {
+  .pricing__buttons > div {
+    border-radius: 8px;
+    padding: 16px;
+  }
+}
+.pricing__buttons > div h3 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+  text-align: center;
+  background: #EBECEB;
+  color: #000;
+  margin-bottom: 32px;
+  border-radius: 7px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (width < 768px) {
+  .pricing__buttons > div h3 {
+    border-radius: 4px;
+    height: 67px;
+    font-size: 32px;
+    line-height: 110%;
+    margin-bottom: 16px;
+  }
+}
+.pricing__buttons > div p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgba(2, 26, 32, 0.8);
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(13, 54, 58, 0.2);
+  margin-bottom: 32px;
+}
+@media (width < 768px) {
+  .pricing__buttons > div p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+}
+.pricing__buttons > div a {
+  margin-top: unset;
+}
+.pricing__buttons > div:first-child > h3 {
+  background: #EBECEB;
+  color: #000;
+}
+.pricing__buttons > div:nth-child(2) > h3 {
+  background: #0D363A;
+  color: #fff;
+}
+
+.pricing__questions {
+  padding: 64px 16px 120px 16px;
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  justify-content: space-between;
+}
+@media (width < 768px) {
+  .pricing__questions {
+    flex-direction: column;
+    padding-bottom: 104px;
+  }
+}
+.pricing__questions > div:first-child p {
+  padding-bottom: 24px;
+}
+@media (width < 768px) {
+  .pricing__questions > div:first-child p {
+    text-align: center;
+  }
+}
+.pricing__questions > div:first-child h3 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+  color: #02171A;
+  max-width: 431px;
+  width: 100%;
+}
+@media (width < 768px) {
+  .pricing__questions > div:first-child h3 {
+    text-align: center;
+    max-width: unset;
+    padding-bottom: 40px;
+  }
+}
+.pricing__questions > div:nth-child(2) {
+  max-width: 755px;
+}
+.pricing__questions .accordion, .pricing__questions .burger__menu > div > ul > li {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #EBECEB;
+  transition: 0.3s;
+}
+.pricing__questions .accordion.open .accordion__header, .pricing__questions .burger__menu > div > ul > li.open .accordion__header, .pricing__questions .accordion.open .burger__menu > div > ul > li > a, .pricing__questions .burger__menu > div > ul > li.open .burger__menu > div > ul > li > a {
+  background-color: #0D363A;
+  color: #fff;
+}
+.pricing__questions .accordion.open .accordion__content, .pricing__questions .burger__menu > div > ul > li.open .accordion__content, .pricing__questions .accordion.open .burger__menu > div > ul > li > div:last-child, .pricing__questions .burger__menu > div > ul > li.open .burger__menu > div > ul > li > div:last-child {
+  margin-top: -11px;
+  padding: 0 32px 32px 32px;
+  height: auto;
+  background-color: #0D363A;
+}
+.pricing__questions .accordion.open .accordion__content p, .pricing__questions .burger__menu > div > ul > li.open .accordion__content p, .pricing__questions .accordion.open .burger__menu > div > ul > li > div:last-child p, .pricing__questions .burger__menu > div > ul > li.open .burger__menu > div > ul > li > div:last-child p {
+  opacity: 0.8;
+  color: #fff;
+}
+@media (width < 768px) {
+  .pricing__questions .accordion.open .accordion__content, .pricing__questions .burger__menu > div > ul > li.open .accordion__content, .pricing__questions .accordion.open .burger__menu > div > ul > li > div:last-child, .pricing__questions .burger__menu > div > ul > li.open .burger__menu > div > ul > li > div:last-child {
+    padding: 5px 16px 24px 16px;
+  }
+}
+.pricing__questions .accordion.open svg, .pricing__questions .burger__menu > div > ul > li.open svg {
+  transform: rotate(180deg);
+}
+.pricing__questions .accordion.open svg path, .pricing__questions .burger__menu > div > ul > li.open svg path {
+  fill: #fff;
+}
+.pricing__questions .accordion .accordion__header, .pricing__questions .burger__menu > div > ul > li .accordion__header, .pricing__questions .burger__menu > div > ul > li > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 32px;
+  cursor: pointer;
+  background-color: #EBECEB;
+  color: #02171A;
+  min-height: 96px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0;
+  border: none;
+}
+.pricing__questions .accordion .accordion__header > span, .pricing__questions .burger__menu > div > ul > li .accordion__header > span, .pricing__questions .burger__menu > div > ul > li > a > span {
+  font-size: 22px;
+  font-family: "Raleway";
+}
+@media (width < 768px) {
+  .pricing__questions .accordion .accordion__header > span, .pricing__questions .burger__menu > div > ul > li .accordion__header > span, .pricing__questions .burger__menu > div > ul > li > a > span {
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+.pricing__questions .accordion .accordion__header > svg, .pricing__questions .burger__menu > div > ul > li .accordion__header > svg, .pricing__questions .burger__menu > div > ul > li > a > svg {
+  width: 14px;
+  height: 8px;
+  transition: transform 0.3s ease;
+}
+.pricing__questions .accordion .accordion__header > svg path, .pricing__questions .burger__menu > div > ul > li .accordion__header > svg path, .pricing__questions .burger__menu > div > ul > li > a > svg path {
+  transition: color 0.3s ease;
+}
+@media (width < 768px) {
+  .pricing__questions .accordion .accordion__header, .pricing__questions .burger__menu > div > ul > li .accordion__header, .pricing__questions .burger__menu > div > ul > li > a {
+    padding: 18px 16px;
+    min-height: 64px;
+  }
+}
+.pricing__questions .accordion .accordion__content, .pricing__questions .burger__menu > div > ul > li .accordion__content, .pricing__questions .burger__menu > div > ul > li > div:last-child {
+  max-height: 0;
+  overflow: hidden;
+  color: #fff;
+  padding: 0 32px;
+  transition: opacity 0.5s ease, padding 0.5s ease;
+  transition: all 0.3s ease;
+  background-color: #EBECEB;
+}
+.pricing__questions .accordion .accordion__content p, .pricing__questions .burger__menu > div > ul > li .accordion__content p, .pricing__questions .burger__menu > div > ul > li > div:last-child p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+@media (width < 768px) {
+  .pricing__questions .accordion .accordion__content, .pricing__questions .burger__menu > div > ul > li .accordion__content, .pricing__questions .burger__menu > div > ul > li > div:last-child {
+    padding: 0 16px;
+  }
+}
+.pricing__questions .accordion:not(:last-child), .pricing__questions .burger__menu > div > ul > li:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.popup__content_pricing {
+  max-width: 602px;
+  padding: 0;
+  background: none;
+}
+.popup__content_pricing form {
+  padding: 32px;
+  width: 100%;
+}
+.popup__content_pricing .form-group {
+  width: 100%;
+  max-width: 538px;
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+@media (width < 768px) {
+  .popup__content_pricing .form-group {
+    flex-direction: column;
+  }
+}
+.popup__content_pricing input,
+.popup__content_pricing textarea {
+  width: 100%;
+}
+.popup__content_pricing h4 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+  padding-bottom: 40px;
+}
+@media (width < 1024px) {
+  .popup__content_pricing h4 {
+    font-size: 26px;
+    line-height: 120%;
+    padding-bottom: 24px;
+  }
+}
+.popup__content_pricing .popup__close {
+  filter: brightness(0) invert(1);
+  top: 40px;
+  right: 32px;
+}
+
 .wrapper > div, .wrapper > ul {
   padding: 0 48px;
   max-width: 1440px;
@@ -1083,8 +1520,8 @@
   font-size: 22px;
   line-height: 26.4px;
   color: #02171A;
-  opacity: 0.6;
   font-family: "Raleway";
+  transition: color 0.3s ease;
 }
 .accordion__arrow {
   width: 32px;

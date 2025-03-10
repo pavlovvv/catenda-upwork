@@ -1,6 +1,8 @@
 @use './product';
 @use './about';
 @use './partner';
+@use './case';
+@use './pricing';
 
 $green: #0D363A;
 $grey: #cfd7d8;
@@ -56,9 +58,8 @@ $grey: #cfd7d8;
             font-size: 22px;
             line-height: 26.4px;
             color: #02171A;
-            opacity: 0.6;
             font-family: 'Raleway';
-
+            transition: color .3s ease;
         }
     }
 

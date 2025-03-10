@@ -10,6 +10,8 @@ accordions.forEach((accordion, index) => {
     ".accordion__content, .burger__menu > div > ul > li > div"
   );
 
+  console.log(content)
+
   if (index === 0) {
     accordion.classList.add("open");
     content.style.maxHeight = content.scrollHeight + 24 + "px";
@@ -17,7 +19,6 @@ accordions.forEach((accordion, index) => {
 
   header.addEventListener("click", () => {
     accordion.classList.toggle("open");
-
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
@@ -172,8 +173,47 @@ if (typeof Swiper !== "undefined") {
       1024: { slidesPerView: 4 },
     },
   });
+
+  const partnerSwiper = new Swiper(".case-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    grabCursor: true,
+    grid: {
+      rows: 2,               
+      fill: 'row',           
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    type: 'bullets',
+    renderBullet: function (index, className) {
+      return `<span class="${className}">${index + 1}</span>`;
+    },
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+      600: { slidesPerView: 2, spaceBetween: 24,
+        grid: {
+          rows: 1,               
+          fill: 'row',           
+        },
+       },
+      1024: { slidesPerView: 3,
+        grid: {
+          rows: 1,               
+          fill: 'row',           
+        },
+       },
+    },
+  });
 } else {
-  console.warn("Swiper не найден, пропускаем инициализацию.");
+  console.warn("Swiper not defined");
 }
 
 const popup = document.getElementById("popup");
@@ -181,7 +221,7 @@ const overlay = popup.querySelector(".popup__overlay");
 const closeBtn = popup.querySelector(".popup__close");
 
 
-const learnMoreButtons = document.querySelectorAll(".learn-more-btn");
+const learnMoreButtons = document.querySelectorAll(".learn-more-btn, .contact-sales-btn");
 learnMoreButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     popup.classList.add("show");

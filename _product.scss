@@ -474,12 +474,15 @@ $grey: #cfd7d8;
         top: 0;
         left: 0;
         width: 100%;
-        height: 150%;
+        height: 100%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0);
         transition: all .3s ease;
 
-        // При "show" размытие и затемнение
+
+        @media (width < 1024px) {
+            height: 150%;
+        }
         .popup.show & {
             background-color: rgba(0, 0, 0, 0.6);
         }
@@ -587,6 +590,15 @@ $grey: #cfd7d8;
 
     input {
         height: 50px;
+    }
+
+    textarea {
+        padding-top: 13px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    input, textarea {
         background: transparent;
         font-size: inherit;
         border: 1px solid #FFFFFF4D;

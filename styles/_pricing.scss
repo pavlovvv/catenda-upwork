@@ -89,6 +89,10 @@
         max-width: 412px;
         color: #fff;
         opacity: .8;
+
+        @media (width < 1024px) {
+            font-size: 16px;
+        }
     }
 }
 

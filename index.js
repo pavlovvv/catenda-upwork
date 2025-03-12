@@ -2,7 +2,18 @@ const accordions = document.querySelectorAll(
   ".accordion, .burger__menu > div > ul > li"
 );
 
-accordions.forEach((accordion, index) => {
+const divAccordions = [];
+const liAccordions = [];
+
+accordions.forEach((accordion) => {
+  if (accordion.tagName.toLowerCase() === "div") {
+    divAccordions.push(accordion);
+  } else if (accordion.tagName.toLowerCase() === "li") {
+    liAccordions.push(accordion);
+  }
+});
+
+const accordionAcions = (accordion, index, allAccordions) => {
   const header = accordion.querySelector(
     ".accordion__header, .burger__menu > div > ul > li > a"
   );
@@ -16,12 +27,51 @@ accordions.forEach((accordion, index) => {
   }
 
   header.addEventListener("click", () => {
+    if (!accordion.classList.contains("open")) {
+      allAccordions.forEach((otherAccordion) => {
+        if (otherAccordion !== accordion) {
+          otherAccordion.classList.remove("open");
+          const otherContent = otherAccordion.querySelector(
+            ".accordion__content, .burger__menu > div > ul > li > div"
+          );
+          if (otherContent) {
+            otherContent.style.maxHeight = null;
+          }
+        }
+      });
+    }
+
     accordion.classList.toggle("open");
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
       content.style.maxHeight = content.scrollHeight + 24 + "px";
     }
+  });
+};
+
+divAccordions.forEach((accordion, index) => {
+  accordionAcions(accordion, index, divAccordions);
+});
+
+liAccordions.forEach((accordion, index) => {
+  accordionAcions(accordion, index, liAccordions);
+});
+
+const firstAccordionContent = document.querySelector(".accordion__content");
+if (firstAccordionContent) {
+  const firstLink = firstAccordionContent.querySelector("a");
+  if (firstLink) {
+    firstLink.classList.add("active");
+  }
+}
+
+document.querySelectorAll(".accordion__content a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    document.querySelectorAll(".accordion__content a").forEach((link) => {
+      link.classList.remove("active");
+    });
+    this.classList.add("active");
   });
 });
 

@@ -448,7 +448,7 @@ $grey: #cfd7d8;
     background: $green;
     // padding: 12px 11px;
     border-radius: 4px;
-    height: 100vh;
+    height: 100dvh;
 
     &>div {
         padding-top: 88px;
@@ -858,12 +858,20 @@ $grey: #cfd7d8;
         padding-bottom: 64px;
     }
 
-    &>p {
-        text-align: center;
-        padding-bottom: 24px;
+    &_pt-120 {
+        padding-top: 120px;
 
         @media (width < 1024px) {
-            padding-bottom: 16px;
+            padding-top: 64px;
+        }
+    }
+
+    &>p {
+        text-align: center;
+        padding-bottom: 64px;
+
+        @media (width < 1024px) {
+            padding-bottom: 40px;
         }
     }
 

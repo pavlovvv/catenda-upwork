@@ -1,3 +1,4 @@
+//accordions
 const accordions = document.querySelectorAll(
   ".accordion, .burger__menu > div > ul > li"
 );
@@ -21,7 +22,7 @@ const accordionAcions = (accordion, index, allAccordions) => {
     ".accordion__content, .burger__menu > div > ul > li > div"
   );
 
-  if (index === 0) {
+  if (index === 0 && content.scrollHeight !== 0) {
     accordion.classList.add("open");
     content.style.maxHeight = content.scrollHeight + 24 + "px";
   }
@@ -75,6 +76,7 @@ document.querySelectorAll(".accordion__content a").forEach((anchor) => {
   });
 });
 
+//main page image change
 const mainImage = document.getElementById("main-dashboard-image");
 const mobileImages = document.querySelectorAll(".benefits__graph_mobile img");
 
@@ -95,6 +97,7 @@ accordionLinks.forEach((link) => {
   });
 });
 
+//counters
 const counters = document.querySelectorAll(".counter");
 
 const observer = new IntersectionObserver(
@@ -111,6 +114,7 @@ const observer = new IntersectionObserver(
 
 counters.forEach((counter) => observer.observe(counter));
 
+//fade animations
 const fadeContainers = document.querySelectorAll(".fade-container");
 const fadeElements = document.querySelectorAll(".fade");
 
@@ -145,6 +149,7 @@ fadeElements.forEach((el) => {
   observer2.observe(el);
 });
 
+//parallax
 const parallaxElements = document.querySelectorAll(".parallax");
 
 window.addEventListener("scroll", () => {
@@ -200,6 +205,7 @@ if (burgerIcon && burgerMenu) {
   });
 }
 
+//swiper
 if (typeof Swiper !== "undefined") {
   const swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
@@ -234,10 +240,6 @@ if (typeof Swiper !== "undefined") {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-      type: "bullets",
-      renderBullet: function (index, className) {
-        return `<span class="${className}">${index + 1}</span>`;
-      },
     },
 
     navigation: {
@@ -263,33 +265,40 @@ if (typeof Swiper !== "undefined") {
       },
     },
   });
+
+  partnerSwiper.on("slideChange", function () {
+    window.scrollTo({ top: 350, behavior: "smooth" });
+  });
 } else {
   console.warn("Swiper not defined");
 }
 
-const popup = document.getElementById("popup");
-if (popup) {
-  const overlay = popup.querySelector(".popup__overlay");
-  const closeBtn = popup.querySelector(".popup__close");
+//popups
+const learnMoreButtons = document.querySelectorAll(".learn-more-btn");
 
-  const learnMoreButtons = document.querySelectorAll(
-    ".learn-more-btn, .contact-sales-btn"
-  );
-  learnMoreButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
+learnMoreButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const popupId = btn.getAttribute("data-popup-id");
+    const popup = document.getElementById(popupId);
+    if (popup) {
       popup.classList.add("show");
-    });
-  });
 
-  closeBtn.addEventListener("click", () => {
-    popup.classList.remove("show");
-  });
+      const closeBtn = popup.querySelector(".popup__close");
+      const overlay = popup.querySelector(".popup__overlay");
 
-  overlay.addEventListener("click", () => {
-    popup.classList.remove("show");
-  });
-}
+      // Додаємо прослуховувач подій для закриття popup
+      closeBtn.addEventListener("click", () => {
+        popup.classList.remove("show");
+      });
 
+      overlay.addEventListener("click", () => {
+        popup.classList.remove("show");
+      });
+    }
+  });
+});
+
+//terms checkbox
 const termsCheckbox = document.getElementById("terms");
 const submitButton = document.querySelector(".main-button_submit");
 

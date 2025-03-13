@@ -98,9 +98,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #02171A;
+            color: #004A42;
+            background: #DFE7E5;
+            transition: background .3s ease;
             border: 2px solid #004A42;
             border-radius: 4px;
+
+            &:hover {
+                background: #BFDDBC;
+            }
         }
     }
 }

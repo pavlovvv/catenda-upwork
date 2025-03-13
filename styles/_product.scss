@@ -54,14 +54,14 @@ $grey: #cfd7d8;
     }
 
     &>div:nth-child(2) {
-        background: #EBECEB;
         border-radius: 14px;
-        padding: 60px 74px;
         max-height: 520px !important;
+        height: 100%;
+        max-width: 731px;
 
         @media (width < 1024px) {
             max-height: unset !important;
-            padding: 16px 17px !important;
+            max-width: unset;
         }
 
         &>div:nth-child(2) {
@@ -337,6 +337,24 @@ $grey: #cfd7d8;
 }
 
 
+.swiper-button-prev,
+.swiper-button-next {
+    transition: all 0.3s ease;
+
+    path {
+        transition: fill .3s ease;
+    }
+
+    &:hover {
+        background: #BFDDBC;
+
+        path {
+            fill: #004A42;
+        }
+    }
+
+}
+
 .swiper-button-prev {
     background: #004A42;
     min-width: 48px;
@@ -394,17 +412,22 @@ $grey: #cfd7d8;
     &__items {
         display: flex;
         justify-content: space-between;
-        gap: 20px;
+        column-gap: 20px;
+        row-gap: 40px;
+        flex-wrap: wrap;
 
         @media (width < 768px) {
             flex-direction: column;
-            row-gap: 40px;
             align-items: center;
         }
 
         &>div {
-            max-width: 421px;
+            max-width: calc(33% - 12px);
             width: 100%;
+
+            @media (width < 768px) {
+                max-width: 421px;
+            }
 
             img {
                 border-radius: 14px;
@@ -647,8 +670,14 @@ $grey: #cfd7d8;
     color: #fff;
 
     a {
-        text-decoration: underline;
+        border-bottom: 1px solid #fff;
         font-weight: 600;
+        transition: border .3s ease, color .3s ease;
+
+        &:hover {
+            border-bottom: 1px solid #BFDDBC;
+            color: #BFDDBC;
+        }
     }
 
     input[type="checkbox"] {

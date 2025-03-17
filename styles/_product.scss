@@ -560,6 +560,20 @@ $grey: #cfd7d8;
                 line-height: 110.00000000000001%;
             }
         }
+
+        p:first-child {
+            font-family: "PT Sans";
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19.2px;
+            color: rgb(13, 54, 58);
+            text-transform: uppercase;
+        }
+
+        p:not(:last-child):not(:first-of-type),
+        ul:not(:last-child) {
+            padding-bottom: 24px;
+        }
     }
 
     &__close {
@@ -575,7 +589,7 @@ $grey: #cfd7d8;
         padding-bottom: 16px;
     }
 
-    &__heading {
+    h4 {
         max-width: 567px;
         font-weight: 600;
         font-size: 22px;
@@ -589,7 +603,8 @@ $grey: #cfd7d8;
         }
     }
 
-    &__text {
+    p,
+    ul {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
@@ -598,10 +613,6 @@ $grey: #cfd7d8;
         @media (width < 1024px) {
             max-width: unset;
         }
-    }
-
-    &__text:not(:last-child) {
-        padding-bottom: 24px;
     }
 
     form {
